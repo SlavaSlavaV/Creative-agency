@@ -130,8 +130,6 @@ $(function () {
 		$('.close, .search-form__input').fadeOut(500);
 	});
 
-	// Owl-carousel	
-
 	// top slider	
 
 	$('.header-carousel').owlCarousel({
@@ -239,59 +237,59 @@ $(function () {
 	});
 
 //Magnific popap gallery
-	
-	// $('#work').width(document.documentElement.clientWidth); 
 
-	$('.gallery').magnificPopup({
-		mainClass: 'mfp-zoom-in mfp-img-mobile',
-		delegate: 'a',
-		type: 'image',
-		tLoading: '',
-		fixedContentPos: false, // если true-posit: fixed, уйдет полоса прокрутки
-		closeBtnInside: false, // положение кнопки закрытия
-		closeOnBgClick: true, // закрывает окно, при нажатии на темное наложение
-		gallery:{
-			enabled:true,
-			preload: [0, 1]
-		},
-		zoom: {
-			enabled: true,
-			duration: 300, // don't foget to change the duration also in CSS
-			opener: function(openerElement) {
-				return openerElement.is('a') ? openerElement : openerElement.find('a');
-			}
-		},
-		image: {
-			verticalFit: true,
-			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-			titleSrc: function(item) {
-				return item.el.attr('title') + '<small>by Creative Agency Tajam</small>';
-			}
-		},
-		removalDelay: 300,
-		callbacks: {
-			beforeChange: function() {
-				this.items[0].src = this.items[0].src + '?=' + Math.random(); 
-			},
-			open: function() {
-				$.magnificPopup.instance.next = function() {
-					var self = this;
-					self.wrap.removeClass('mfp-image-loaded');
-					setTimeout(function() { $.magnificPopup.proto.next.call(self); }, 300);
-				}
-				$.magnificPopup.instance.prev = function() {
-					var self = this;
-					self.wrap.removeClass('mfp-image-loaded');
-					setTimeout(function() { $.magnificPopup.proto.prev.call(self); }, 300);
-				}
-			},
-			imageLoadComplete: function() { 
-				var self = this;
-				setTimeout(function() { self.wrap.addClass('mfp-image-loaded'); }, 16);
-			}
+$('.gallery').magnificPopup({
+	delegate: 'a',
+	type: 'image',
+	closeBtnInside: true,
+	fixedContentPos: false,
+	removalDelay: 400,
+	disableOn: 767,
+	mainClass: 'mfp-zoom-in mfp-img-mobile',
+	tLoading: '',
+	image: {
+		verticalFit: true,
+		tError: '<a href="%url%">The photo #%curr%</a> did not load.'
+	},
+	gallery: {
+		enabled: true,
+		preload: [0, 1]
+	},
+	zoom: {
+		enabled: true,
+		duration: 400, // Не забудьте изменить продолжительность в CSS
+		opener: function(openerElement) {
+			return openerElement.is('a') ? openerElement : openerElement.find('a');
 		}
-		
-	});
+	},
+	callbacks: {
+		change: function() {
+			this.items[0].src = this.items[0].src + '?=' + Math.random(); 
+		},
+		open: function() {
+			$.magnificPopup.instance.next = function() {
+				var self = this;
+				self.wrap.removeClass('mfp-image-loaded');
+				setTimeout(function() { 
+					$.magnificPopup.proto.next.call(self); 
+				}, 300);
+			}
+			$.magnificPopup.instance.prev = function() {
+				var self = this;
+				self.wrap.removeClass('mfp-image-loaded');
+				setTimeout(function() { 
+					$.magnificPopup.proto.prev.call(self); 
+				}, 300);
+			}
+		},
+		imageLoadComplete: function() { 
+			var self = this;
+			setTimeout(function() { 
+				self.wrap.addClass('mfp-image-loaded');
+			}, 16);
+		}
+	}		
+});
 
 	// parallax bg
 
