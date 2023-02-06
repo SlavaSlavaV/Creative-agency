@@ -1,0 +1,261 @@
+/* Section Service-2 */
+
+.s-service-2
+	min-height: 700px
+	margin-top: 6.9rem
+	margin-bottom: 6.3rem
+	+sm(margin-top, 4rem)
+	+sm(margin-bottom, 4rem)
+	&__owl-wrap
+		margin-top: 7.5rem 
+		+md(margin-top, 5rem)
+
+/* Accordion plugin */
+
+.slidorion
+	+row-flex()
+	justify-content: space-between
+	min-height: 380px
+	margin-top: 5.5rem
+	+lg(height, auto)
+	+lg(justify-content, center)
+	+sm(margin-top, 4rem)
+	+xs(margin-top, 3rem)
+	&__poster
+		display: none
+		margin-bottom: 1.25rem
+		+col()
+		size(12)
+		+xs(display, block)
+
+.slider 
+	+col()
+	+size(6)
+	+size-lg(12)
+	+lg(margin-bottom, 20px)
+	+xs(display, none)
+	position: relative
+	float: left
+	overflow: hidden
+	max-width: 570px
+	height: 100%
+	min-height: 380px
+	& .slide
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100% 
+
+.accordion 
+	+col()
+	+size(6)
+	+size-sm(12)
+	+lg(min-width, 570px)
+	+sm(min-width, auto)
+	min-width: 600px
+	height: 100%
+	max-height: 380px
+	background: #fff
+	position: relative
+	z-index: 999
+	overflow: hidden
+	float: left
+	
+.content 
+	height: 180px
+	padding: 14px 35px 0 20px
+	margin-bottom: 10px
+	overflow: auto
+	font: 
+		family: $default-font
+		style: italic
+		weight: 300
+		size: 0.9375rem
+	color: #999
+	background: #fff
+	border: 1px solid #e5e5e5
+	border-top: none
+	&__text 
+		padding-bottom: 40px
+	
+.header
+	position: relative
+	width: 100%
+	height: 60px
+	margin-bottom: 10px
+	line-height: 58px
+	background: #fff
+	border: 1px solid #e5e5e5
+	cursor: pointer
+	&.active 
+		margin-bottom: 0
+	&__h3
+		display: inline-block
+		line-height: 58px
+	&__icon-1
+		display: inline-block
+		width: 32px
+		height: 32px
+		margin: 0 14px
+		background-image: url(../img/icons/service-2-ic-1.svg)
+		background-repeat: no-repeat
+		background-position: center 
+		vertical-align: middle
+	&__icon-2
+		@extend .header__icon-1
+		background-image: url(../img/icons/service-2-ic-2.svg)
+		background-repeat: no-repeat
+		background-position: center 
+	&__icon-3
+		@extend .header__icon-1
+		background-image: url(../img/icons/service-2-ic-3.svg)
+		background-repeat: no-repeat
+		background-position: center 
+
+/* Angle-icon */
+
+.angle                                            
+	position: absolute							
+	display: inline-block                                   
+	text-align: center
+	height: 4px
+	width: 20px
+	margin-left: 5px
+	+trf-r(0deg)
+	&:hover 
+		cursor: pointer
+	&::before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0;
+		height: 100%
+		width: 51%
+		background-color: #cccccc
+		transform: skew(0deg, 45deg)
+	&::after 
+		content: ''
+		position: absolute
+		top: 0
+		right: 0
+		height: 100%
+		width: 50%
+		background-color: #cccccc
+		transform: skew(0deg, -45deg)
+
+.header
+	&__angle
+		right: 3%
+		top: 50%
+		vertical-align: middle
+
+.header.active
+	& > .header__angle
+		+trf-r(180deg)
+
+/* owl-quotes slider */
+
+.owl-wrap
+	position: relative
+
+.owl-slide
+	+row-flex()
+	justify-content: center
+	position: relative
+	width: 100%
+	max-width: 75rem
+	min-height: 18.125rem
+	background-color: #f8f8f8
+	+xs(margin, 0)
+	&__icon-wrap
+		+col()
+		+size(2)
+		+size-md(12)
+		+md(margin-bottom, 25px)
+		+xs(margin-left, 0)
+		+xs(margin-right, 0)
+		align-self: center
+	&__icon
+		display: block
+		position: relative
+		width: 9.375rem
+		height: 9.375rem
+		border: 3px solid $aqua
+		+md(margin-left, auto)
+		+md(margin-right, auto)
+		+sm(width, 7.5rem)
+		+sm(height, 7.5rem)
+		&::before 
+			content: ""
+			display: block
+			position: absolute
+			top: 50%
+			left: 50%
+			width: 63px
+			height: 61px
+			+trf-t(-50%, -50%)
+			background-image: url(../img/icons/comment-ic.svg)
+			background-repeat: no-repeat
+	&__wrap
+		+col()
+		+size(8)
+		+size-md(10)
+		+size-xs(12)
+		align-self: center
+		padding-left: 20px
+		+xs(padding-left, 0)
+	&__text
+		font: 
+			style: italic
+			weight: 300
+			size: 1.5em
+		line-height: 1.5
+		letter-spacing: -0.015em
+		+sm(font-size, 1em)
+	&__name
+		position: relative
+		@extend .top-title
+		margin-bottom: 0
+		margin-top: 20px
+		padding-left: 70px
+		+sm(padding-left, 50px)
+		&::before
+			content: ""
+			position: absolute
+			top: 50%
+			left: 0
+			width: 3.75rem
+			height: 3px
+			+trf-t(0, -50%)
+			background-color: $red
+			+sm(width, 2.75rem)
+			+sm(height, 2px)
+
+.owl-controls
+	position: absolute
+	top: 50%
+	left: 0
+	width: 100%
+	min-height: 21px
+	z-index: 99
+	pointer-events: none
+	+trf-t(0, -50%)
+	+xs(top, 20%)
+	&__angle
+		position: absolute
+		width: 21px
+		height: 21px
+		pointer-events: auto
+		cursor: pointer
+		+trs(0.3s) 
+		&:hover 
+			+trf-s(1.2)
+		&_prev 
+			top: 0
+			left: 1.5%
+			background: url(../img/icons/arrow-left-ic.svg) no-repeat
+		&_next 
+			top: 0
+			right: 1.5%
+			background: url(../img/icons/arrow-right-ic.svg) no-repeat

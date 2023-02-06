@@ -1,0 +1,82 @@
+/* Section Our team */
+
+.s-our-team 
+	margin-top: 6.25rem
+	+sm(margin-top, 5rem)
+	&__photos-wrap
+		margin-top: 4rem
+		+sm(margin-top, 2rem)
+
+.photo-block
+	&__content
+		@extend .photo-block__link
+		cursor: pointer
+		&:hover .social-list
+			opacity: 1
+		&::before
+			content: ""
+		&::after 
+			content: ""
+
+.social-list 
+	position: absolute
+	top: 50%
+	left: 50%
+	width: 100%
+	max-width: 14rem
+	opacity: 0
+	+trs(0.5s)
+	+trf-t(-50%, -50%)
+	&__item
+		float: left
+		width: 56px
+		height: 56px
+		border-right: 1px solid $red
+		&:last-child 
+			border-right: none
+	&__link 
+		display: inline-block
+		width: 100%
+		line-height: 56px
+		background-color: $yellow
+		text-align: center
+		font-size: 1.5em
+		color: $red
+		&:hover,
+		&:focus 
+			background-color: $red
+			color: #fff 
+
+.team-member 
+	&__name
+		@extend .h3
+		margin-top: 30px
+		margin-bottom: 8px
+	&__position
+		font: 
+			style: italic
+			weight: 300
+			size: 0.9375em
+		color: #999
+
+/* clients logo */
+
+.clients-logo 
+	+row-flex()
+	+md(margin-top, 4rem)
+	justify-content: space-between
+	margin-top: 10.25rem
+	&__block
+		+col()
+		+size(2)
+		+size-sm(4)
+		+size-xs(6)
+		text-align: center
+		&:first-child 
+			text-align: left
+			+md(text-align, center)
+		&:last-child 
+			text-align: right
+			+md(text-align, center)
+
+

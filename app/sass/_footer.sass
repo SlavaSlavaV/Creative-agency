@@ -1,0 +1,234 @@
+/*Footer*/
+.footer 
+	padding-top: 4.375rem
+	background-color: #f8f8f8
+	&__inner 
+		+row-flex()
+		justify-content: space-between
+		margin-bottom: 34px
+	&__logo > a
+		font: 
+			family: $title-font
+			weight: bold 
+			size: 2.875em
+		color: #cccccc
+		line-height: 1
+	&__text 
+		margin-top: 30px
+		margin-bottom: 40px
+		font-size: 0.9375em
+	&__social 
+		margin-bottom: 38px
+	&__social-header
+		margin-bottom: 10px 
+		font: 
+			family: $title-font
+			size: 0.875em 
+		color: #333333
+		& > b 
+			margin-right: 5px
+			font-size: 1.125rem
+	&__social-content 
+		margin-top: 10px
+		& > span 
+			font: 
+				style: italic 
+				weight: 300
+				size: 0.9375em
+			color: #999
+			text-transform: capitalize
+	&__title 
+		margin-top: 9px
+		margin-bottom: 40px
+
+.social 
+	display: inline-block
+	margin-left: 12px
+	+xs(margin-left, 0)
+	&__item 
+		display: inline-block 
+	&__link 
+		padding: 0 6px
+		font-size: 1rem
+		vertical-align: middle
+		color: $aqua
+		&:hover,
+		&:focus 
+			color: darken($aqua, 30%)
+
+/* Subscribe Form */ 
+
+.subscribe-form 
+	position: relative
+	display: flex
+	flex-wrap: wrap
+	width: 100%
+	max-width: 378px
+	+xs(max-width, 100%)
+	&__email
+		min-width: 60%
+		padding: 0 12px 
+		border: 1px solid #e5e5e5
+		border-right: 0
+		line-height: 38px
+		+xs(min-width, 100%)
+		+xs(margin-bottom, 15px)
+		+xs(border-right, 1px solid #e5e5e5)
+		&:focus 
+			border-color: $aqua
+	&__submit
+		min-width: 40%
+		height: 40px
+		padding: 0 15px
+		line-height: 40px
+		text-align: center
+		background-color: $aqua
+		font: 
+			family: $title-font
+			style: normal
+			weight: bold 
+			size: 0.875em 
+		text-transform: uppercase 
+		color: #ffffff
+		cursor: pointer
+		+trs(0.3s)
+		+xs(min-width, 100%)
+		&:hover,
+		&:focus 
+			background-color: darken($aqua, 30%)
+
+// form validation 
+
+input.error
+	box-shadow: 0 0 5px 1px $red
+
+label.error
+	position: absolute
+	bottom: 100%
+	left: 0 
+	color: $red
+	font:
+		family: $default-font  
+		size: 1em
+		weight: normal 
+	margin-bottom: 10px
+
+Popup validate
+
+.popup-valid 
+	position: relative
+	max-width: 530px
+	margin: 0 auto
+	padding: 25px
+	background-color: $yellow
+	color: #413d4b
+	+sm(max-width, 400px)
+	+sm(padding, 15px)
+	&__title
+		margin-bottom: 30px
+		font: 
+			family: $title-font
+			size: 2em
+			weight: bold
+		line-height: 1.2
+		+sm(margin-bottom, 20px)
+		+sm(font-size, 1.5em)
+	&__text 
+		font:
+			family: $default-font
+			size: 1.2em 
+			weight: normal
+		margin-bottom: 35px
+		+sm(margin-bottom, 20px)
+		+sm(font-size, 1em)
+	&__dismiss
+		@extend .popup-valid__text
+		display: inline-block
+		padding: 10px 60px
+		font-size: 1em
+		color: inherit
+		border: 2px solid $red
+		+trs(0.3s)
+		+sm(padding, 7px 45px)
+		&:hover,
+		&:focus 
+			background-color: $red
+			color: #fff
+
+.footer-col-first 
+	+col() 
+	+size(5)
+	+size-lg(6)
+	+size-sm(12)
+	padding-bottom: 1.5rem
+
+.footer-col-second 
+	+col() 
+	+size(4)
+	+size-lg(6)
+	+size-sm(12)
+
+.footer-col-third 
+	+col() 
+	+size(3)
+	+size-lg(12)
+	&__link 
+		@extend .blogs__date
+		display: inline-block
+		margin-top: 10px
+		color: #333333
+		&:hover,
+		&:focus
+			text-decoration: underline
+
+.blogs 
+	&__item 
+		display: flex
+		align-items: center
+		margin-bottom: 24px
+	&__link-img
+		margin-right: 20px
+		& > img 
+			min-width: 7.5rem
+			min-height: 5rem
+	&__link
+		@extend .h5
+		display: inline-block
+		max-width: 13.75rem
+		line-height: 1.5
+		&:hover, 
+		&:focus
+			text-decoration: underline
+	&__date 
+		font: 
+			style: italic
+			weight: 300
+			size: 13px
+
+.instagram 
+	display: flex
+	flex-wrap: wrap
+	&__item 
+		position: relative
+		display: block
+		width: 92px
+		height: 92px	
+		border: 1px solid #fff
+		overflow: hidden
+	&__img 
+		min-width: 100%
+		+trs(0.4s)
+		&:hover,
+		&:focus 
+			+trf-s(1.2)
+
+.copyright 
+	padding: 10px 0
+	font: 
+		family: $title-font
+		weight: normal
+		size: 0.875em
+	color: #333333
+	text-align: center
+	& > span 
+		color: $red

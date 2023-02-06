@@ -1,0 +1,83 @@
+.s-blog 
+	padding-top: 6.875rem
+	padding-bottom: 4.375rem
+	+sm(padding-top, 4rem)
+	+sm(padding-bottom, 2.5rem)
+
+.post-wrap 
+	+row-flex()
+	justify-content: space-between
+	+sm(justify-content, center)
+	margin-top: 5.5rem
+	+sm(margin-top, 4.5rem)
+
+.post 
+	+col()
+	+size(4)
+	+size-md(6)
+	+md(max-width, 380px)
+	+size-sm(12)
+	+xs(margin-bottom, 1.875rem)
+	margin-bottom: 2.5rem
+	&__img-link
+		position: relative
+		display: block
+		max-width: 380px
+		max-height: 240px
+		+sm(margin, 0 auto)
+	&__time 
+		position: absolute
+		width: 3.75rem
+		height: 4.375rem
+		bottom: 10px
+		left: -10px
+		padding: 10px
+		background-color: $aqua
+		text-align: center
+		line-height: 1
+		color: #fff
+	&__time-num 
+		font: 
+			family: $title-font
+			size: 1.875em
+			weight: bold
+	&__time-month
+		font:
+			style: italic
+			size: 0.9375em
+			weight: 300
+		text-transform: capitalize
+	&__title-link 
+		display: block
+		margin-top: 17px
+		margin-bottom: 12px
+		& > .h3
+			+md(line-height, 1.5)
+			&:hover,
+			&:focus 
+				@extend .post-stats__comments-link:hover
+	&__text
+		margin-bottom: 17px
+		font-size: 0.9375em
+
+.post-stats
+	margin-top: 14px
+	&__item 
+		display: inline-block
+		margin-right: 8px 
+		& i
+			font-size: 1rem
+			color: $aqua
+	&__views-count 
+		margin-left: 6px
+		font: 
+			style: italic 
+			weight: 300 
+			size: 0.9375em
+		color: #999
+	&__comments-link
+		@extend .post-stats__views-count
+		&:hover, 
+		&:focus 
+			color: $aqua
+		

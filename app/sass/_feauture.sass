@@ -1,0 +1,64 @@
+/* Section Feauture */
+
+.s-feauture
+	position: relative
+	max-height: 850px
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: top center 
+	padding-top: 6.875rem
+	+lg(max-height, 733px)
+	+md(max-height, 634px)
+	+md(padding-top, 5.5rem)
+	+sm(max-height, 585px)
+	+sm(padding-top, 4rem)
+	+xs(max-height, 471px)
+	&::before
+		content: ""
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: rgba(255, 255, 255, 0.85)
+
+.picture-wrap 
+	position: relative
+	max-width: 43.75rem
+	height: 41.75rem
+	margin: 0 auto
+	+lg(max-width, 35.9rem)
+	+lg(height, 34.9rem)
+	+md(max-width, 31rem)
+	+md(height, 30rem)
+	+sm(max-width, 28rem)
+	+sm(height, 27rem)
+	+xs(max-width, 22rem)
+	+xs(height, 22rem)
+
+.display-one 
+	position: absolute
+	max-width: 29.625rem
+	max-height: 36.125rem
+	left: 12%
+	bottom: 0
+	+lg(max-width, 23.375rem)
+	+md(max-width, 20rem)
+	+sm(max-width, 18rem)
+	+xs(max-width, 14rem)
+
+.display-two 
+	position: absolute
+	max-width: 13.4375rem
+	height: auto
+	left: 67%
+	bottom: -67px 
+	+lg(max-width, 10.25rem)
+	+lg(left, 65%)
+	+lg(bottom, -35px)
+	+md(max-width, 8.5rem)
+	+md(bottom, -22px)
+	+sm(max-width, 7.5rem)
+	+sm(bottom, -15px)
+	+xs(max-width, 5.95rem)

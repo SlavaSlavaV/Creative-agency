@@ -1,0 +1,29 @@
+//transition
+
+=trs($time) 
+	transition: all ($time) ease
+
+//transform
+
+=trf-r($deg) 
+	transform: rotate($deg)
+
+=trf-t($val1, $val2)
+	transform: translate($val1, $val2)
+
+=trf-s($val)
+	transform: scale($val)
+
+//gradient mixin
+
+=gradient-bg
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0 
+	opacity: .90
+	z-index: 0
+	background-color: rgb(243, 129, 129)
+	background-image: linear-gradient(to bottom, rgb(243, 129, 129) 0%,rgb(252, 227, 138) 100%)
+	background-image: -ms-linear-gradient(to bottom, rgb(243, 129, 129) 0%,rgb(252, 227, 138) 100%)

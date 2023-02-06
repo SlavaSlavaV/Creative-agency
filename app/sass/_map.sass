@@ -1,0 +1,46 @@
+.s-map
+	position: relative
+	height: 12.5rem
+	background: #ccc url(../img/map/map.jpg) no-repeat top center
+	background-size: cover
+	&::before 
+		content: ""
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background-color: rgba(255, 255, 255, .85)
+.map 
+	position: relative
+	padding: 50px 0
+	text-align: center
+	&__title 
+		font: 
+			family: $title-font
+			weight: bold 
+			size: 1.5em
+		text-transform: uppercase
+		color: $red
+		&::before 
+			content: ""
+			position: absolute
+			bottom: 37px
+			left: 50%
+			width: 3.75rem
+			height: 3px
+			+trf-t(-50%, 0)
+			background-color: $red
+			+sm(width, 3.125rem)
+	& span 
+		display: block
+	&__link 
+		display: inline-block
+		margin-top: 5px
+		opacity: 1
+		color: $red
+		&:hover,
+		&:focus
+			color: darken($red, 30%)
+			
+	

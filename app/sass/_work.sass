@@ -1,0 +1,146 @@
+/* Section Work */ 
+ 
+.s-work 
+	margin-top: 9.625rem
+	+md(margin-top, 6rem)
+	+sm(margin-top, 4rem)
+	&__owl-wrap
+		margin-top: 4.25rem
+
+/* magnific popap gallery */
+ 
+.gallery 
+	display: flex
+	justify-content: center
+	margin-top: 6.25rem
+	+sm(margin-top, 4rem)
+	+xs(flex-wrap, wrap)
+	&__wrap
+		flex-basis: auto
+	&__item 
+		position: relative
+		display: block
+		max-width: 480px
+		overflow: hidden
+	&__img 
+		display: block
+
+/* images hover effects */ 
+  
+.gallery__item 
+	& .caption 
+			+gradient-bg
+			text-align: center
+			transition: all .5s linear 0s
+			transform: rotateY(0deg) scale(0)
+
+.caption
+	+xs(display, none)
+	&__wrap
+		position: absolute
+		top: 50%
+		left: 50%
+		+trf-t(-50%, -50%)
+	&__img 
+		display: inline-block
+		width: 30px
+		height: 30px
+		margin-bottom: 16px
+		background-image: url(../img/icons/picture-ic.svg)
+	&__title
+		@extend .h3
+		margin-bottom: 16px
+		color: #fff 
+	&__text 
+		font: 
+			family: $default-font
+			style: italic
+			weight: 300
+			size: 0.9375em 
+		line-height: 1
+		color: #fff 
+
+.gallery__item 
+	&:hover .caption,
+	&:focus .caption 
+		transform: rotateY(360deg) scale(1)
+			
+/* magnific popap gallery customize */
+
+.mfp-close 
+	font-size: 40px
+
+.mfp-ready .mfp-figure
+	opacity: 0
+
+.mfp-zoom-in
+	.mfp-figure, .mfp-iframe-holder .mfp-iframe-scaler
+		opacity: 0
+		transition: all 0.3s ease-out
+	&.mfp-bg, .mfp-preloader
+		opacity: 0
+		transition: all 0.3s ease-out
+	&.mfp-image-loaded .mfp-figure
+		opacity: 1
+	&.mfp-ready
+		.mfp-iframe-holder .mfp-iframe-scaler
+			opacity: 1
+		&.mfp-bg, .mfp-preloader
+			opacity: 0.8
+	&.mfp-removing
+		.mfp-figure, .mfp-iframe-holder .mfp-iframe-scaler
+			opacity: 0
+		&.mfp-bg, .mfp-preloader
+			opacity: 0
+
+.mfp-iframe-scaler
+	overflow: visible
+
+.mfp-zoom-out-cur
+	cursor: auto
+	.mfp-image-holder .mfp-close
+		cursor: pointer
+
+/* magnific popap gallery preloader */
+
+.mfp-preloader
+	width: 30px !important
+	height: 30px !important
+	background-color: $aqua !important
+	opacity: 0.65
+	margin: 0 auto
+	animation: rotateplane 1.2s infinite ease-in-out	
+
+@keyframes rotateplane
+	0%
+		transform: perspective(120px) rotateX(0deg) rotateY(0deg)
+	50%
+		transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg)
+	100%
+		transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg)
+
+/*testimonials slider owl-carousel*/
+
+.owl-slide__image 
+	width: 13.125rem
+	height: 13.125rem
+	+md(width, 11.25rem)
+	+md(height, 11.25rem)
+	+sm(width, 7.5rem)
+	+sm(height, 7.5rem)
+	+md(margin-bottom, 25px)
+	+col()
+	align-self: center
+	& img 
+		border-radius: 100%
+
+.owl-slide__wrap-text 
+	@extend .owl-slide__wrap
+	padding-left: 0
+	+md(padding-left, 20px)
+
+.owlTsm-controls__angle_prev 
+	@extend .owl-controls__angle_prev
+
+.owlTsm-controls__angle_next 
+	@extend .owl-controls__angle_next

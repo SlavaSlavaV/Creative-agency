@@ -1,0 +1,79 @@
+.s-people-say 
+	position: relative
+	min-height: 51.875rem
+	margin-top: 5.5rem
+	padding-top: 6.875rem
+	padding-bottom: 3.625rem
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: top center
+	+sm(padding-top, 4.25rem)
+	+sm(padding-bottom, 1rem)
+	+sm(margin-top, 4.25rem)
+	&::before 
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		background-color: rgba(255, 255, 255, 0.85)
+
+.clients-wrap
+	+row-flex()
+	justify-content: space-between
+	+md(justify-content, center)
+	+sm(margin-top, 5rem)
+	margin-top: 8rem
+	margin-left: 0
+	margin-right: 0
+
+.client-block 
+	+col()
+	+size(6)
+	+row-flex()
+	justify-content: space-between
+	+size-md(8)
+	+md(justify-content, center)
+	+size-sm(10)
+	+sm(margin-bottom, 3rem)
+	+size-xs(12)
+	margin-left: 15px
+	margin-right: 15px
+	+lg(margin-left, -15px)
+	+lg(margin-right, -15px)
+	margin-bottom: 4.25rem
+	&__img 
+		+col()
+		+size(3)
+		min-width: 6.875rem
+		height: auto
+		& img
+			border-radius: 100%
+	&__feedback
+		+col()
+		+size(9)
+		+size-md(12)
+		+md(text-align, center)
+		position: relative
+		&::before 
+			content: ""
+			position: absolute
+			top: 43%
+			left: 0
+			width: 3.75rem
+			height: 3px
+			background-color: #f38181
+			+md(display, none)
+	&__name 
+		@extend .h3
+		margin-top: 8px
+		margin-bottom: 9px
+		+sm(margin-bottom, 4px)
+	&__prof 
+		@extend .team-member__position
+		color: #333
+	&__text 
+		margin-top: 2.25rem
+		font-size: 0.9375em
+		+sm(margin-top, 1.2rem)

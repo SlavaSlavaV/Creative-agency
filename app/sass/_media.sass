@@ -1,0 +1,87 @@
+@media screen and (max-width: 768px) 
+
+	/* header adaptive menu start */
+
+	.top-menu
+		display: flex
+		justify-content: center
+		align-items: center
+		float: none 
+		position: fixed
+		top: 0
+		left: 0
+		width: 100vw
+		height: 100vh
+		padding-top: 40px
+		background-color: #fff
+		overflow: auto
+		+trf-t(-100%, 0)
+		+trs(0.85s)
+		z-index: 2
+		&__list 
+			text-align: center
+		&__item
+			float: none 
+			margin: 0
+		&__link
+			display: block
+			width: 100vw
+			padding-bottom: 0
+			font-size: 1.5em
+			font-weight: bold
+			line-height: 50px
+			letter-spacing: 1px
+			color: #000
+			transition: background-color 0.5s linear
+			&:hover,
+			&:focus 
+				color: #000
+				background-color: rgba(0, 0, 0, 0.1)
+				&::before 
+					width: 0
+
+	.menu-toggle 
+		display: inline-block
+
+	/* header adaptive and */
+
+@media screen and (max-width: 544px) 
+
+	/* header slider start */
+
+	.owl-carousel
+		&.owl-dots 
+			width: 100%
+			text-align: center
+			position: absolute
+			bottom: 70px
+			z-index: 1 
+		&	button.owl-dot
+			display: inline-block
+			width: 10px
+			height: 10px
+			margin-left: 10px
+			margin-right: 0
+			border-radius: 50%
+			border: 1px solid $red
+			+trs(.5s)
+			&:nth-child(1)
+				display: inline-block
+				width: 10px
+				height: 10px
+				border-radius: 50%
+				border: 1px solid $red
+				+trs(.5s)
+			&:nth-child(4)
+				display: inline-block
+				width: 10px
+				height: 10px
+				border-radius: 50%
+				border: 1px solid $red
+				+trs(.5s)
+			&.active
+				background-color: $red				
+				transform: scale(1.3)
+				&::before
+					content: ""
+	/* header slider and */
